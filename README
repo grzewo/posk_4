@@ -1,1 +1,3 @@
-alamakota
+Jako pierwszy uruchamia sie program nadajnik poleceniem ./nadajnik &
+a nastepnie uruchamia sie odbiornik poleceniem ./odbiornik i dalej
+postepuje sie wg wskazowek na ekranie

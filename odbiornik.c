@@ -22,6 +22,14 @@ int main()
     int pipe_fd,res;
     int open_mode = O_RDONLY;
 
+	  if (access(FIFO_NAME, F_OK) == -1) {
+	     res = mkfifo(FIFO_NAME, 0777);
+	     if (res != 0) {
+	     fprintf(stderr, "Could not create fifo %s\n", FIFO_NAME);
+	     exit(EXIT_FAILURE);
+	     }
+	}
+
 
     printf("\n\nProces odbiornika uruchomil sie i dziala w tle\nJedo identyfikator to:\t%d\n", getpid());
     pipe_fd = open(FIFO_NAME, open_mode);

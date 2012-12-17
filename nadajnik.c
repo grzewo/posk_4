@@ -24,14 +24,6 @@ int main()
 
 	printf("\nTwoja wiadomosc po zakodowaniu to: \n%s\n",buffer);
 
-    if (access(FIFO_NAME, F_OK) == -1) {
-        res = mkfifo(FIFO_NAME, 0777);
-        if (res != 0) {
-            fprintf(stderr, "Could not create fifo %s\n", FIFO_NAME);
-            exit(EXIT_FAILURE);
-        }
-    }
-
     printf("Proces nr %d  - nadajnik zaczyna dzialac\n\n", getpid());
 //    execl("/home/grzesiek/cw4/ch13/fifo4",0);
 	 pipe_fd = open(FIFO_NAME, open_mode);
